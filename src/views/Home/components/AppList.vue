@@ -16,12 +16,12 @@
             </a>
           </div>
         </li>
-        <li class="app-more">
+        <!-- <li class="app-more">
           <a href="javascript:;">
             <img src="../../../assets/images/zxgz2.png" alt="">
             <p>专项工作</p>
           </a>
-        </li>
+        </li> -->
         <li class="app-more">
           <a href="javascript:;" @click="appMoreFn">
             <img src="../../../assets/images/gd.png" alt="">
@@ -30,13 +30,21 @@
         </li>
       </ul>
     </div>
+    <van-popup v-model="show" round position="bottom" :style="{ height: '90%' }">
+      <all-app :app-lists="appLists" @onshowchonge="showChonge"></all-app>
+    </van-popup>
   </div>
 </template>
 
 <script>
+import AllApp from './AllApp'
 export default {
+  components:{
+    AllApp,
+  },
   data(){
     return{
+      show:false,
       appLists:[
         {
           appName:'信用管理',
@@ -86,12 +94,12 @@ export default {
           appYesLinkImg:require('../../../assets/images/yjjy2.png'),
           link:``,
         },
-        // {
-        //   appName:'专项工作',
-        //   appNoLinkImg:require('../../../assets/images/zxgz1.png'),
-        //   appYesLinkImg:require('../../../assets/images/zxgz2.png'),
-        //   link:``,
-        // },
+        {
+          appName:'专项工作',
+          appNoLinkImg:require('../../../assets/images/zxgz2.png'),
+          appYesLinkImg:require('../../../assets/images/zxgz2.png'),
+          link:``,
+        },
       ],
     }
   },
@@ -100,7 +108,10 @@ export default {
       window.open(link,"_blank");
     },
     appMoreFn(){
-
+      this.show = true;
+    },
+    showChonge(v){
+      this.show = v;
     },
   }
 }

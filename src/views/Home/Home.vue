@@ -136,7 +136,7 @@
               <div class="is-left">
                 <img src="../../assets/images/tongji.png" alt="">
               </div>
-              <div class="is-right">
+              <div class="is-right" @click="countAnalysisFn">
                 <p>统计分析</p>
                 <p>提供安全生产风险管控指数及各类统计图表分析</p>
               </div>
@@ -178,6 +178,9 @@ export default {
     },
 
     infoSelectFn(){
+      
+    },
+    countAnalysisFn(){
       
     }
   }
