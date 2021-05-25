@@ -4,12 +4,8 @@
     <div class="title">
       <div class="title-bj">
         <div class="user-info">
-          <div class="left">
-            市应急管理局
-          </div>
-          <div class="right">
-            上午好，刘国伟
-          </div>
+          <div class="left">市应急管理局</div>
+          <div class="right">上午好，刘国伟</div>
         </div>
         <div class="day-duty">
           <div class="duty-bj">
@@ -18,16 +14,25 @@
               <div class="left-duty">
                 <div class="duty-choice">
                   <div>
-                    <img src="../../assets/images/rili.png" alt="">
+                    <img src="../../assets/images/rili.png" alt="" />
                     <span>今日值班</span>
                   </div>
                   <div>
-                    <span :class="{'active':dutyActive==0}" @click="ductChange(0)">白班</span> |
-                    <span :class="{'active':dutyActive==1}" @click="ductChange(1)">夜班</span>
+                    <span
+                      :class="{ active: dutyActive == 0 }"
+                      @click="ductChange(0)"
+                      >白班</span
+                    >
+                    |
+                    <span
+                      :class="{ active: dutyActive == 1 }"
+                      @click="ductChange(1)"
+                      >夜班</span
+                    >
                   </div>
                 </div>
                 <div class="duty-content">
-                  <div class="day" v-show="dutyActive==0">
+                  <div class="day" v-show="dutyActive == 0">
                     <table cellspacing="0">
                       <thead>
                         <tr>
@@ -39,15 +44,15 @@
                       </thead>
                       <tbody>
                         <tr>
-                          <td>{{dayShiftDatas.day1}}</td>
-                          <td>{{dayShiftDatas.day2}}</td>
-                          <td>{{dayShiftDatas.day3}}</td>
-                          <td>{{dayShiftDatas.day4}}</td>
+                          <td>{{ dayShiftDatas.day1 }}</td>
+                          <td>{{ dayShiftDatas.day2 }}</td>
+                          <td>{{ dayShiftDatas.day3 }}</td>
+                          <td>{{ dayShiftDatas.day4 }}</td>
                         </tr>
                       </tbody>
                     </table>
                   </div>
-                  <div class="night" v-show="dutyActive==1">
+                  <div class="night" v-show="dutyActive == 1">
                     <table cellspacing="0">
                       <thead>
                         <tr>
@@ -59,10 +64,10 @@
                       </thead>
                       <tbody>
                         <tr>
-                          <td>{{nightShiftDatas.night1}}</td>
-                          <td>{{nightShiftDatas.night2}}</td>
-                          <td>{{nightShiftDatas.night3}}</td>
-                          <td>{{nightShiftDatas.night4}}</td>
+                          <td>{{ nightShiftDatas.night1 }}</td>
+                          <td>{{ nightShiftDatas.night2 }}</td>
+                          <td>{{ nightShiftDatas.night3 }}</td>
+                          <td>{{ nightShiftDatas.night4 }}</td>
                         </tr>
                       </tbody>
                     </table>
@@ -85,8 +90,8 @@
               </div>
             </div>
             <div class="buttom-notice">
-              <img src="../../assets/images/xxts.png" alt="">
-              <img src="../../assets/images/ggl.png" alt="">
+              <img src="../../assets/images/xxts.png" alt="" />
+              <img src="../../assets/images/ggl.png" alt="" />
               <span>暂无公告</span>
             </div>
           </div>
@@ -101,7 +106,7 @@
       <!-- 待办提醒 -->
       <div class="home-remind">
         <div class="hr-left">
-          <img src="../../assets/images/dbtx.png" alt="">
+          <img src="../../assets/images/dbtx.png" alt="" />
         </div>
         <div class="hr-right">
           <div>待办总计：<span>18</span></div>
@@ -113,7 +118,7 @@
       <!-- 学习强安 -->
       <div class="home-learning">
         <div class="hl-wrapper">
-          <img src="../../assets/images/xxqa.png" alt="">
+          <img src="../../assets/images/xxqa.png" alt="" />
         </div>
       </div>
       <!-- 查询统计 -->
@@ -125,7 +130,7 @@
           <div class="hs-content">
             <div class="info-select">
               <div class="is-left">
-                <img src="../../assets/images/xx.png" alt="">
+                <img src="../../assets/images/xx.png" alt="" />
               </div>
               <div class="is-right" @click="infoSelectFn">
                 <p>信息查看</p>
@@ -134,7 +139,7 @@
             </div>
             <div class="count-analysis">
               <div class="is-left">
-                <img src="../../assets/images/tongji.png" alt="">
+                <img src="../../assets/images/tongji.png" alt="" />
               </div>
               <div class="is-right" @click="countAnalysisFn">
                 <p>统计分析</p>
@@ -149,134 +154,132 @@
 </template>
 
 <script>
-import AppList from './components/AppList'
+import AppList from "./components/AppList";
 export default {
-  name: 'Home',
+  name: "Home",
   components: {
     AppList,
   },
-  data(){
-    return{
-      dayShiftDatas:{
-        day1:'杨利伟',
-        day2:'杨利伟',
-        day3:'杨利伟',
-        day4:'杨利伟',
+  data() {
+    return {
+      dayShiftDatas: {
+        day1: "杨利伟",
+        day2: "杨利伟",
+        day3: "杨利伟",
+        day4: "杨利伟",
       },
-      nightShiftDatas:{
-        night1:'张三',
-        night2:'张三',
-        night3:'张三',
-        night4:'张三',
+      nightShiftDatas: {
+        night1: "张三",
+        night2: "张三",
+        night3: "张三",
+        night4: "张三",
       },
-      dutyActive:0, //0 白班  1 夜班
-    }
+      dutyActive: 0, //0 白班  1 夜班
+    };
   },
-  methods:{
-    ductChange(v){
+  methods: {
+    ductChange(v) {
       this.dutyActive = v;
     },
 
-    infoSelectFn(){
-      
+    infoSelectFn() {
+      this.$router.push("/Information");
     },
-    countAnalysisFn(){
-      
-    }
-  }
-}
+  },
+};
 </script>
 <style lang="less" scoped>
-.home{
-  .home-wrapper{
+.home {
+  .home-wrapper {
     padding: 7.5rem 1.5rem 1.5rem 1.5rem;
-    .home-remind{
+    .home-remind {
       height: 4.4rem;
       background-color: #fff;
       margin-top: 1.5rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      .hr-left{
+      .hr-left {
         margin-top: 0.4rem;
-        img{
+        img {
           width: 8rem;
           height: 2.8rem;
         }
       }
-      .hr-right{
+      .hr-right {
         display: flex;
-        &>div{
+        & > div {
           margin-right: 1.5rem;
-          &:nth-child(1)>span{
-            color: #009DFA;
+          &:nth-child(1) > span {
+            color: #009dfa;
           }
-          &:nth-child(2)>span{
-            color: #FF9B00;
+          &:nth-child(2) > span {
+            color: #ff9b00;
           }
-          &:nth-child(3)>span{
-            color: #00C36F;
+          &:nth-child(3) > span {
+            color: #00c36f;
           }
         }
-        .van-icon{
+        .van-icon {
           vertical-align: text-bottom;
         }
       }
     }
-    .home-learning{
+    .home-learning {
       margin-top: 1.5rem;
-      img{
+      img {
         height: 9rem;
       }
     }
-    .home-selecount{
+    .home-selecount {
       height: 16.6rem;
       background-color: #fff;
       margin-top: 1.5rem;
-      .hs-wrapper{
-        padding:1.5rem 1.2rem 1.2rem 1.2rem;
-        .hs-title{
+      .hs-wrapper {
+        padding: 1.5rem 1.2rem 1.2rem 1.2rem;
+        .hs-title {
           margin-bottom: 1.2rem;
           font-size: 1.5rem;
           font-weight: 700;
         }
-        .hs-content{
+        .hs-content {
           display: flex;
           flex-direction: column;
-          &>div{
+          & > div {
             flex: 1;
           }
-          .info-select,.count-analysis{
+          .info-select,
+          .count-analysis {
             display: flex;
-            .is-left{
+            .is-left {
               margin-right: 1.1rem;
-              img{
+              img {
                 width: 1.9rem;
                 height: 2.2rem;
               }
             }
-            .is-right{
+            .is-right {
               border-bottom: 0.1rem solid #e9e9e9;
               padding-bottom: 1.5rem;
               line-height: 2.2rem;
-              p:first-child{
+              p:first-child {
                 font-size: 1.4rem;
               }
-              p:last-child{
+              p:last-child {
                 color: #9a9a9a;
               }
             }
           }
-          .count-analysis{
-              margin-top: 1rem;
+          .count-analysis {
+            margin-top: 1rem;
 
-            .is-left{
-              img{
+            .is-left {
+              img {
                 width: 2.2rem;
                 height: 2.2rem;
               }
             }
-            .is-right{
+            .is-right {
               border-bottom: none;
               padding-bottom: 0;
             }
@@ -285,130 +288,130 @@ export default {
       }
     }
   }
-  .title{
-    .title-bj{
+  .title {
+    .title-bj {
       height: 16.45rem;
       padding: 1.5rem;
-      background-color: #3296FA;
+      background-color: #3296fa;
       position: relative;
-      .user-info{
+      .user-info {
         display: flex;
         justify-content: space-between;
         color: #fff;
-        .left{
+        .left {
           font-size: 2rem;
           font-weight: 700;
         }
-        .right{
+        .right {
           font-size: 1.6rem;
         }
       }
-      .day-duty{
+      .day-duty {
         margin-top: 1.15rem;
-        .duty-bj{
+        .duty-bj {
           height: 17.9rem;
-          background: url('../../assets/images/di.png') no-repeat;
+          background: url("../../assets/images/di.png") no-repeat;
           background-size: 100% 100%;
-          .top-wrapper{
-            padding:2.5rem 1.2rem 1.2rem 1.2rem;
+          .top-wrapper {
+            padding: 2.5rem 1.2rem 1.2rem 1.2rem;
             display: flex;
-            .left-duty{
+            .left-duty {
               flex: 3;
-              .duty-choice{
+              .duty-choice {
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                &>div:first-child{
+                & > div:first-child {
                   padding-top: 0.1rem;
-                  img{
+                  img {
                     width: 1.6rem;
                     height: 1.6rem;
                     margin-top: 0.2rem;
                   }
-                  span{
+                  span {
                     font-size: 1.6rem;
                     margin-left: 0.5rem;
                     font-weight: 700;
                   }
                 }
-                &>div:last-child{
-                  color: #1F1F1F;
-                  span{
+                & > div:last-child {
+                  color: #1f1f1f;
+                  span {
                     font-size: 1.35rem;
                     vertical-align: middle;
                     color: #333;
-                    &.active{
-                      color: #3296FA;
+                    &.active {
+                      color: #3296fa;
                     }
                   }
                 }
               }
-              .duty-content{
+              .duty-content {
                 margin-top: 0.8rem;
-                table{
+                table {
                   width: 100%;
                   text-align: center;
-                  tr td{
-                    background: #F5F5F5;
+                  tr td {
+                    background: #f5f5f5;
                     border: 1px solid #fff;
                     height: 3.5rem;
                   }
-                  thead{
-                    color: #1F1F1F;
-                    tr td{
+                  thead {
+                    color: #1f1f1f;
+                    tr td {
                       color: #9a9a9a;
                     }
                   }
                 }
               }
             }
-            .right-emergency{
+            .right-emergency {
               flex: 1;
-              .re-wrapper{
+              .re-wrapper {
                 height: 99%;
                 width: 7rem;
-                background: url('../../assets/images/yj.png') no-repeat;
+                background: url("../../assets/images/yj.png") no-repeat;
                 background-size: 100% 100%;
                 margin-top: 0.4rem;
                 margin: 0 auto;
-                .re-top{
+                .re-top {
                   font-size: 1.4rem;
                   color: #fff;
                   text-align: center;
                   height: 3.4rem;
                   line-height: 3.4rem;
                 }
-                .re-buttom{
+                .re-buttom {
                   height: 6.5rem;
                   display: flex;
                   justify-content: center;
                   align-items: center;
-                  &>div{
+                  & > div {
                     text-align: center;
                   }
-                  & p:first-child{
+                  & p:first-child {
                     font-size: 1.7rem;
                     font-weight: 700;
                   }
-                  & p:last-child{
+                  & p:last-child {
                     font-size: 1.2rem;
-                    color: #FF9F00;
+                    color: #ff9f00;
                   }
                 }
               }
             }
           }
-          .buttom-notice{
+          .buttom-notice {
             height: 4rem;
             margin-left: 1.2rem;
             display: flex;
             align-items: center;
-            img{
+            img {
               // width: 1.65rem;
               height: 1.35rem;
               margin-right: 0.85rem;
             }
-            span{
+            span {
               font-size: 1.4rem;
               color: #9a9a9a;
             }

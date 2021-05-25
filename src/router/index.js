@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home/Home.vue'
-
+import Information from '../views/Home/Information.vue'
 Vue.use(VueRouter)
 
 const routes = [
@@ -13,8 +13,14 @@ const routes = [
   {
     path: '/home',
     name: 'Home',
-    component: Home
+    component: Home,
+    children:[{
+      path: '/information',
+      name: 'Information',
+      component: Information
+    },]
   },
+ 
 ]
 
 const router = new VueRouter({
