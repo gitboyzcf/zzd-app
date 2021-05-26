@@ -8,6 +8,13 @@ import './assets/css/common.css'
 import 'vant/lib/index.css'
 
 import axios from 'axios'
+// import * as echarts from 'echarts'
+// Vue.prototype.$echarts = echarts
+
+import F2 from '@antv/f2'
+console.log(F2)
+Vue.prototype.$F2 = F2
+
 Vue.prototype.$axios = axios
 Vue.config.productionTip = false
 Vue.use(Vant);
