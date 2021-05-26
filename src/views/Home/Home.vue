@@ -132,7 +132,7 @@
               <div class="is-left">
                 <img src="../../assets/images/xx.png" alt="" />
               </div>
-              <div class="is-right" @click="infoSelectFn">
+              <div class="is-right" @click="toLink('Information')">
                 <p>信息查看</p>
                 <p>提供企业基本信息、安全生产要素信息的查看信息查看</p>
               </div>
@@ -141,7 +141,7 @@
               <div class="is-left">
                 <img src="../../assets/images/tongji.png" alt="" />
               </div>
-              <div class="is-right" @click="countAnalysisFn">
+              <div class="is-right" @click="toLink('CountAnalysis')">
                 <p>统计分析</p>
                 <p>提供安全生产风险管控指数及各类统计图表分析</p>
               </div>
@@ -182,12 +182,10 @@ export default {
       this.dutyActive = v;
     },
 
-    infoSelectFn() {
-      this.$router.push("Information");
+    toLink(link){
+      this.$router.push(link);
+      // this.$router.push("Information");
     },
-    countAnalysisFn(){
-      
-    }
   },
 };
 </script>

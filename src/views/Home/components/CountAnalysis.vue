@@ -2,7 +2,7 @@
 <template>
   <div class="count-analysis">
     <Header>
-      <span name="title">统计分析</span>
+      <span slot="title">统计分析</span>
     </Header>
   </div>
 </template>
