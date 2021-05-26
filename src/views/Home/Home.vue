@@ -183,8 +183,11 @@ export default {
     },
 
     infoSelectFn() {
-      this.$router.push("/Information");
+      this.$router.push("Information");
     },
+    countAnalysisFn(){
+      
+    }
   },
 };
 </script>
