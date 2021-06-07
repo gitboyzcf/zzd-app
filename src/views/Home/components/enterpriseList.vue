@@ -1,15 +1,10 @@
-<!-- 信息查看 -->
+<!-- 企业档案 -->
 <template>
   <div class="Information">
     <Header>
-      <span slot="title">信息查看</span>
+      <span slot="title">企业档案</span>
     </Header>
-    <div class="Information_search">
-      <van-search v-model="value" placeholder="请输入企业名称" />
-      <div style="font-size: 1.5rem; padding-right: 1.5rem">筛选</div>
-    </div>
-    <div class="Information_text">当前企业数量共计12076家</div>
-    <div class="Information_both" @click="toLink('enterpriseList')">
+    <div class="Information_both">
       <div class="Information_content">
         <div class="Information_content_top">
           <img src="../../../assets/images/QY.png" alt="" />
@@ -21,18 +16,14 @@
         </div>
         <div style="margin-top: 1.5rem">
           <div class="Information_content_box">
-            <img src="../../../assets/images/REN.png" alt="" />
-            法定代表人：<span class="Information_content_boxname">王一雄</span>
-          </div>
-          <div class="Information_content_box">
-            <img src="../../../assets/images/dh.png" alt="" />
-            联系电话：<span class="Information_content_boxname"
-              >18812345678</span
-            >
+            <img src="../../../assets/images/fl.png" alt="" />
+            行业分类:<span class="Information_content_boxname"></span>
           </div>
           <div class="Information_content_box">
             <img src="../../../assets/images/dizhi.png" alt="" />
-            注册地址：<span class="Information_content_boxname">杭州市</span>
+            企业地址：<span class="Information_content_boxname"
+              >浙江省宁波市宁海县409县道208号</span
+            >
           </div>
         </div>
       </div>
@@ -41,13 +32,20 @@
         <div>预警项</div>
       </div>
     </div>
+    <div class="enterpriseList_content">
+      <ul>
+        <li>企业基本信息<van-icon name="arrow" /></li>
+        <li>经营地址定位<van-icon name="arrow" /></li>
+        <li>企业照片信息<van-icon name="arrow" /></li>
+      </ul>
+    </div>
   </div>
 </template>
 
 <script>
 import Header from "@/components/Header";
 export default {
-  name: "Information",
+  name: "EnterpriseList",
   components: {
     Header,
   },
@@ -56,12 +54,7 @@ export default {
       value: "",
     };
   },
-  methods: {
-    toLink(link) {
-      console.log(111);
-      this.$router.push(link);
-    },
-  },
+  methods: {},
 };
 </script>
 <style lang="less" scoped>
@@ -83,6 +76,7 @@ export default {
   }
   .Information_both {
     margin-bottom: 1.05rem;
+
     background-color: #fff;
     display: flex;
   }
@@ -144,6 +138,17 @@ export default {
   .Information_content_right div:first-child {
     font-weight: bold;
     font-size: 1.8rem;
+  }
+  .enterpriseList_content {
+    background: #fff;
+    font-size: 1.4rem;
+    li {
+      padding: 1.55rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 0.1rem solid #e9e9e9;
+    }
   }
 }
 </style>

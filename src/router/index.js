@@ -25,7 +25,11 @@ const routes = [
     name: 'CountAnalysis',
     component: ()=>import('../views/Home/components/CountAnalysis.vue'),
   },
- 
+  {
+    path: '/enterpriseList',
+    name: 'EnterpriseList',
+    component: ()=>import('../views/Home/components/enterpriseList.vue'),
+  },
 ]
 
 const router = new VueRouter({
