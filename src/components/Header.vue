@@ -24,6 +24,7 @@ export default {};
   display: flex;
   justify-content: space-between;
   align-items: center;
+  z-index: 9999;
   span {
     flex: 1;
     font-size: 1.8rem;
