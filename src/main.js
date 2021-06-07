@@ -3,6 +3,7 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import Vant from 'vant'
+import {Toast} from 'vant'
 import './Global.less'
 import './assets/css/common.css'
 import 'vant/lib/index.css'
@@ -12,10 +13,9 @@ import axios from 'axios'
 // Vue.prototype.$echarts = echarts
 
 import F2 from '@antv/f2'
-console.log(F2)
 Vue.prototype.$F2 = F2
-
 Vue.prototype.$axios = axios
+Vue.prototype.$toast = Toast
 Vue.config.productionTip = false
 Vue.use(Vant);
 

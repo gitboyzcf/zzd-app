@@ -25,6 +25,11 @@ const routes = [
     name: 'CountAnalysis',
     component: ()=>import('../views/Home/components/CountAnalysis.vue'),
   },
+  {
+    path: '/toDoReminder',
+    name: 'ToDoReminder',
+    component: ()=>import('../views/Home/components/ToDoReminder.vue'),
+  },
  
 ]
 
