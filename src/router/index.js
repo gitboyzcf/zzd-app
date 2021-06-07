@@ -30,7 +30,7 @@ const routes = [
     name: 'EnterpriseList',
     component: ()=>import('../views/Home/components/enterpriseList.vue'),
   },
-    path: '/toDoReminder',
+  {    path: '/toDoReminder',
     name: 'ToDoReminder',
     component: ()=>import('../views/Home/components/ToDoReminder.vue'),
   },
